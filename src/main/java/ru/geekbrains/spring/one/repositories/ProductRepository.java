@@ -51,4 +51,15 @@ public class ProductRepository {
             session.getTransaction().commit();
         }
     }
+// !!!! Метод не работает, предполагаю у меня ошибка в составлении запроса (пыталась по разному).
+    // В браузере показывает ошибку 500
+    public List<Product> findProductsByCategoryId(Long id) {
+        try (Session session = hibernateUtils.getCurrentSession()) {
+            session.beginTransaction();
+         //   List<Product> products = session.createQuery("FROM Category c JOIN FETCH c.products WHERE c.id = " + id).getResultList();
+            List<Product> products = session.createQuery("from Product p where p.category_id = " + id).getResultList();
+            session.getTransaction().commit();
+            return products;
+        }
+    }
 }

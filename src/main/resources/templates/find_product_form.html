@@ -11,17 +11,14 @@
 
 <body>
     <div class="container">
-        <h1>Добавить новый продукт</h1>
+        <h1>Найти студента по ID </h1>
 
-        <form method="POST" th:action="@{/products/add}">
+        <form method="GET" th:action="@{/products/find/{id}}">
             <div class="mb-3">
-                <label for="titleField" class="form-label">Название</label>
-                <input type="text" class="form-control" id="titleField" name="title">
+                <label for="idField" class="form-label">ID</label>
+                <input type="number" class="form-control" id="idField" name="id">
             </div>
-            <div class="mb-3">
-                <label for="priceField" class="form-label">Цена</label>
-                <input type="number" class="form-control" id="priceField" name="price">
-            </div>
+
             <button type="submit" class="btn btn-primary">Подтвердить</button>
         </form>
 
