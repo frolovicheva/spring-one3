@@ -14,5 +14,6 @@
         <property name="current_session_context_class">thread</property>
 
         <mapping class="ru.geekbrains.spring.one.model.Product"/>
+        <mapping class="ru.geekbrains.spring.one.model.Category"/>
     </session-factory>
 </hibernate-configuration>

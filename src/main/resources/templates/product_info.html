@@ -16,6 +16,8 @@
             <h5 th:text="${'ID: ' + product.id}"/>
             <h5 th:text="${'Название: ' + product.title}"/>
             <h5 th:text="${'Цена: ' + product.price}"/>
+            <h5 th:text="${'Категория: ' + product.category.title}"/>
+
         </div>
         <div th:if="${product == null}">
             <h5>Такого товара не существует. Проверьте ID</h5>

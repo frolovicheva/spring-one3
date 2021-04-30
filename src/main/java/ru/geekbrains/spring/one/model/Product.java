@@ -22,4 +22,20 @@ public class Product {
 
     @Column(name = "price")
     private int price;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public static void main(String[] args) {
+        Product product = new Product (1L,"pop", 90, new Category (1L, "food"));
+    }
 }
